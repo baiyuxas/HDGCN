@@ -12,3 +12,11 @@ The framework of our model is as follows：
 
 Our code skeleton is borrowed from [WangYueFt/dgcnn](https://github.com/WangYueFt/dgcnn) and [AnTao97/dgcnn.pytorch](https://github.com/AnTao97/dgcnn.pytorch) For more details please contact Anshun Xue.（baiyuxas）
 
+## Classification on ModelNet40
+### training 
+    ```
+    python3 main_cls.py
+    ```
+## Semantic Segmentation on S3DIS
+
+## Part Segmentation on ShapeNet

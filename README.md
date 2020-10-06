@@ -7,7 +7,9 @@ In [HDGCN](https://github.com/baiyuxas/HDGCN/edit/main/README.md)，we bring for
 
 ![1](https://github.com/baiyuxas/HDGCN/blob/main/1st.png)
 
+
 <img src="https://github.com/baiyuxas/HDGCN/blob/main/1st.png" width = "80%" />
+
 
 The framework of our model is as follows：
 ![2](https://github.com/baiyuxas/HDGCN/blob/main/fig1.png)

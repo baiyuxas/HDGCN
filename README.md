@@ -3,9 +3,12 @@ Point cloud is a kind of data which is tough to process because of its Non-Eucli
 
 In HDGCN，we bring forward a Hierarchical Dilated Graph Convolution Network(HDGCN), using cascade dilated layer(CDL) to avoid gridding problem. Compared with the left image without dilated edge convolution, the right image with dilated edge convolution has a larger receptive field and less feature reuse. In order to evaluate the receptive field, we proposed two criteria (AER$&$MCR) to evaluate the expansion rate of receptive field and the sampling of receptive field edge. A more effective cascade structure is proposed, to make a trade-off between AER and MCR.
 
-<img src="./1st.png" width = "300"  alt="1" align=center />
+<img src="./1st.png" width = "500"  alt="1" align=center />
 
 The framework of our model is as follows： 
+
+
+<img src="./fig1.png" width = "500"  alt="2" align=center />
 
 Our code skeleton is borrowed from WangYueFt/dgcnn and AnTao97/dgcnn.pytorch For more details please contact Anshun Xue.（baiyuxas）
 

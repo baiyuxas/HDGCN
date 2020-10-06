@@ -14,8 +14,16 @@ Our code skeleton is borrowed from [WangYueFt/dgcnn](https://github.com/WangYueF
 
 ## Classification on ModelNet40
 ### training 
-    python3 main_cls.py
-    
+    python3 main_cls.py --exp_name=cls_1024 --num_points=1024 
+### run after training
+    python3 main_cls.py --exp_name=cls_1024_eval --num_points=1024 --eval=True --model_path=checkpoints/cls_1024/models/model.t7
 ## Semantic Segmentation on S3DIS
-
+### training 
+    python3 main_semseg.py --exp_name=semseg_5 --test_area=5
+### run after training
+   python3 main_semseg.py --exp_name=semseg_eval --test_area=all --eval=True --model_root=checkpoints/semseg_5/models/
 ## Part Segmentation on ShapeNet
+### training 
+    python3 main_partseg.py --exp_name=partseg 
+### run after training
+    python3 main_partseg.py --exp_name=partseg_eval --eval=True --model_path=checkpoints/partseg/models/model.t7

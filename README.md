@@ -5,7 +5,13 @@ In [HDGCN](https://github.com/baiyuxas/HDGCN/edit/main/README.md)，we bring for
 
 ![1](https://github.com/baiyuxas/HDGCN/blob/main/1st.png) 
 
-The framework of our model is as follows
+The framework of our model is as follows：
 ![2](https://github.com/baiyuxas/HDGCN/blob/main/fig1.png)
 
-For more details please contact Anshun Xue（baiyuxas）
+For more details please contact Anshun Xue.（baiyuxas）
+
+## Classification on ModelNet40
+
+## Semantic Segmentation on S3DIS
+ 
+## Part Segmentation on ShapeNet

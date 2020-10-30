@@ -22,8 +22,12 @@ Our code skeleton is borrowed from [WangYueFt/dgcnn](https://github.com/WangYueF
     python3 main_semseg.py --exp_name=semseg_5 --test_area=5
 ### run after training
     python3 main_semseg.py --exp_name=semseg_eval --test_area=all --eval=True --model_root=checkpoints/semseg_5/models/
+### run with pretrained
+    python3 main_semseg.py --exp_name=semseg_eval --test_area=all --eval=True --model_root=pretrained/semseg_5/models/
 ## Part Segmentation on ShapeNet
 ### training 
     python3 main_partseg.py --exp_name=partseg 
 ### run after training
     python3 main_partseg.py --exp_name=partseg_eval --eval=True --model_path=checkpoints/partseg/models/model.t7
+### run with pretrained
+    python3 main_partseg.py --exp_name=partseg_eval --eval=True --model_path=pretrained/partseg/models/model.t7

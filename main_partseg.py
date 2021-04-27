@@ -95,7 +95,7 @@ def train(args, io):
     #Try to load models
     seg_num_all = train_loader.dataset.seg_num_all
     seg_start_index = train_loader.dataset.seg_start_index
-    # print(seg_num_all)
+    print(seg_num_all)
     if args.model == 'dgcnn':
         model = DGCNN_partseg(args, seg_num_all).to(device)
     else:
@@ -269,7 +269,7 @@ def test(args, io):
         for idx in range(label.shape[0]):
             label_one_hot[idx, label[idx]] = 1
         label_one_hot = torch.from_numpy(label_one_hot.astype(np.float32))
-        # save_data.append(data.numpy().reshape(2048, 3))
+        save_data.append(data.numpy().reshape(2048, 3))
         data, label_one_hot, seg = data.to(device), label_one_hot.to(device), seg.to(device)
         data = data.permute(0, 2, 1)
         batch_size = data.size()[0]
@@ -283,10 +283,12 @@ def test(args, io):
         test_true_seg.append(seg_np)
         test_pred_seg.append(pred_np)
         test_label_seg.append(label.reshape(-1))
+
     #     save_true_seg.append(seg_np.reshape(2048, 1))
     #     save_pred_seg.append(pred_np.reshape(2048, 1))
-    # data_dir = '/home/mask/xas_ws/visualise_part/0.h5'
+    # data_dir = '/home/robot/xas_ws/visualise_part/new.h5'
     # create_h5_file(data_dir, save_data, save_true_seg, save_pred_seg)
+
     test_true_cls = np.concatenate(test_true_cls)
     test_pred_cls = np.concatenate(test_pred_cls)
     test_acc = metrics.accuracy_score(test_true_cls, test_pred_cls)
@@ -316,9 +318,9 @@ if __name__ == "__main__":
                         choices=['airplane', 'bag', 'cap', 'car', 'chair',
                                  'earphone', 'guitar', 'knife', 'lamp', 'laptop', 
                                  'motor', 'mug', 'pistol', 'rocket', 'skateboard', 'table'])
-    parser.add_argument('--batch_size', type=int, default=16, metavar='batch_size',
+    parser.add_argument('--batch_size', type=int, default=8, metavar='batch_size',
                         help='Size of batch)')
-    parser.add_argument('--test_batch_size', type=int, default=8, metavar='batch_size',
+    parser.add_argument('--test_batch_size', type=int, default=4, metavar='batch_size',
                         help='Size of batch)')
     parser.add_argument('--epochs', type=int, default=1000, metavar='N',
                         help='number of episode to train ')
@@ -343,7 +345,7 @@ if __name__ == "__main__":
                         help='dropout rate')
     parser.add_argument('--emb_dims', type=int, default=512, metavar='N',
                         help='Dimension of embeddings')
-    parser.add_argument('--k', type=int, default=10, metavar='N',
+    parser.add_argument('--k', type=int, default=20, metavar='N',
                         help='Num of nearest neighbors to use')
     parser.add_argument('--model_path', type=str, default='', metavar='N',
                         help='Pretrained model path')
